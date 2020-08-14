@@ -1,0 +1,15 @@
+<button id="ubdatebutt"><a href="/books/edit">Update Details</a></button>
+<form action="/books/<%= detailsOfBook.id %>?_method=put" method="POST" class="ubdate">
+    <input type="text" name="title" placeholder="Populated Title" value="<%= detailsOfBook.title %>" id="bookTitle"/>
+    <input type="text" name="author" placeholder="Populated Author" value="<%= detailsOfBook.author %>" id="bookAuthor"/>
+    <input type="text" name="isbn" placeholder="Populated ISBN" value="<%= detailsOfBook.isbn %>" id="bookISBN"/>
+    <input type="text" name="image_url" placeholder="https://www.googleapis.com/books/v1/volumes?q="
+        value="<%= detailsOfBook.image_url %>" id="bookURL"/>
+    <textarea name="description" placeholder="Populated Description" value="<%= detailsOfBook.description %>" rows="7"
+        cols="50" id="bookDesc"></textarea>
+    <input type="text" name="bookshelf" placeholder="Populated Book Shelf" value="<%= detailsOfBook.bookshelf %>" id="bookShelf"/>
+    <button type="submit" class="update">Update Book</button>
+</form>
+<form action="/books/<%= detailsOfBook.id %>?_method=delete" method="POST">
+    <button class="delete"> Delete Book</button>
+</form>
