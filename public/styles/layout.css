@@ -12,11 +12,26 @@ nav ul li{
     display: inline-block;
     margin-right: 20px;
 }
-input{
-    width: 500px;
-    text-align: center;
-    font-size: 25px;
-    margin: 50px 500px;
-    border-radius: 5px;
-    border: none;
+.bookInfo img{
+    height: 400px;
+    width: 268px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px #000000;
+    margin: 20px 15px;
+}
+.bookInfo h2{
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.bookInfo h3{
+    margin: 15px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.bookInfo p{
+    margin: 15px;
+    font-size: 12px;
+    font-weight: lighter;
 }
