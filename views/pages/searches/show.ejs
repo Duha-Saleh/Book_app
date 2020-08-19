@@ -33,9 +33,9 @@
                     <p><%= book.isbn %></p>
                     <p><%= book.bookshelf%></p>
                 </div>
-                <button class="form"><a href="books/${output.rows[0].id}">Select This Book</a></button>
+                <button class="form"><a href="/">Select This Book</a></button>
                
-                <form action="/books" method="post" class="hidden">
+                <form action="/books" method="POST" class="hidden">
                     <input type="text" name="title" placeholder="Title" value="<%= book.title %>" id="bookTitle">
                     <input type="text" name="author" placeholder="Author" value="<%= book.author %>" id="bookAuthor"/>
                     <input type="text" name="isbn" placeholder="Isbn" value="<%= book.isbn %>" id="bookISBN"/>
