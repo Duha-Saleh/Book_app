@@ -46,6 +46,12 @@ function searchResult(req, res){
     }else if(req.body.search === 'author'){
         url += `inauthor:${search}`;
     }
+    // let bookSearch = req.body.bookSearch;
+    // let searchType = req.body.searchType;
+    // let maxresults = 10;
+  
+    // let url = `https://www.googleapis.com/books/v1/volumes?q=in${bookSearch}:${searchType}&maxResults=${maxresults}`;
+
     superagent.get(url).then(resOfShearch =>{
         let data = resOfShearch.body.items;
         let x = data.map(book =>{
@@ -61,8 +67,8 @@ function addingBooks(req, res){
     let assignValues = [req.body.image_url, req.body.title,req.body.author, req.body.description, req.body.isbn, req.body.bookshelf];
     console.log(req.body);
     client.query(SQL, assignValues).then(() =>{
-        let SQL1 = 'SELECT * FROM books WHERE isbn=$1;';
-        let assignValues = [req.body.isbn];
+        let SQL1 = 'SELECT * FROM books WHERE id=$1;';
+        let assignValues = [req.body.id];
         client.query(SQL1, assignValues).then(output =>{
             res.redirect(`books/${output.rows[0].id}`);
         });
@@ -70,7 +76,7 @@ function addingBooks(req, res){
 };
 
 function bookDetails(req, res){
-    console.log(req.params)
+    // console.log(req.params)
     let SQL = 'SELECT * FROM books WHERE id=$1;';
     let assignValues = [req.params.book_id];
     client.query(SQL, assignValues).then(output =>{
